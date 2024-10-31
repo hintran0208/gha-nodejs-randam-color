@@ -1,24 +1,22 @@
 {
-    "executionRoleArn": "arn:aws:iam::430950558682:role/nodejs-task-execution-role",
-    "containerDefinitions": [
+  "executionRoleArn": "arn:aws:iam::694555792183:role/nodejs-task-execution-role",
+  "containerDefinitions": [
+    {
+      "name": "nodejs-container",
+      "image": "<IMAGE_NAME>",
+      "essential": true,
+      "portMappings": [
         {
-            "name": "nodejs-container",
-            "image": "<IMAGE_NAME>",
-            "essential": true,
-            "portMappings": [
-                {
-                    "hostPort": 3000,
-                    "protocol": "tcp",
-                    "containerPort": 3000
-                }
-            ]
+          "hostPort": 3000,
+          "protocol": "tcp",
+          "containerPort": 3000
         }
-    ],
-    "requiresCompatibilities": [
-        "FARGATE"
-    ],
-    "networkMode": "awsvpc",
-    "cpu": "256",
-    "memory": "512",
-    "family": "nodejs-task-definition"
+      ]
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "cpu": "256",
+  "memory": "512",
+  "family": "nodejs-task-definition"
 }
